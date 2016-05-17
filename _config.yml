@@ -1,0 +1,11 @@
+title: personal web site of janos erdos
+email: erdosj@gmail.com
+description: >
+  Personal web space.
+baseurl: "/blog"
+url: "http://erdos.github.io"
+twitter_username: erdosjr
+github_username:  erdos
+
+# Build settings
+markdown: kramdown
