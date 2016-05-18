@@ -1,18 +1,13 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  <b>Tags:</b>
-  <ul class="tags">
-  {% for tag in post.tags %}
-    <li class="inline archive_list"><a class="tag_list_link" href="{{tag |prepend: "/tag/"| prepend: site.baseurl}}">{{ tag }}</a></li>
-    {% endfor %}
-    </ul>
+<article class="post" itemscope>
+  <header>
+    <h1><a href="{{page.url}}">{{page.title}}</a></h1>
+    {% include enum_post.html%}
   </header>
-  <div class="post-content" itemprop="articleBody">
+  <br/>
+  <div>
     {{ content }}
   </div>
 </article>

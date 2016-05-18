@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Clojure collection quirks - Vectors</title>
+  <meta name="description" content="Working with Clojure collections is a pleasure. Yet, sometimes one may run into unexpected behaviors. In this series, we take a look at the most simple Cloju...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://erdos.github.io/2016/05/18/clojure-collections-1.html">
+  <link rel="alternate" type="application/rss+xml" title="personal web site of janos erdos" href="http://erdos.github.io/feed.xml">
+</head>
+
+
+  <body>
+    <section id="A">
+  <div>
+    <!--<a id="Logo" href="/">personal web site of janos erdos</a>-->
+    <nav class="M">
+      <a href="/">Blog</a>
+      
+      
+      <a href="/about/">About</a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <a href="/feed.xml">RSS</a>
+    </nav>
+
+
+  </div>
+</section>
+
+    <div id="main">
+      <div>
+        <article class="post" itemscope>
+  <header>
+    <h1><a href="/2016/05/18/clojure-collections-1.html">Clojure collection quirks - Vectors</a></h1>
+    <li class="blogpost-thumbnail">
+  <h2>
+    <a href=""></a>
+  </h2>
+
+  <span class="timestamp"></span>
+  
+</li>
+
+  </header>
+  <br/>
+  <div>
+    <p>Working with Clojure collections is a pleasure. Yet, sometimes one may run into unexpected behaviors. In this series, we take a look at the most simple Clojure data structures.</p>
+
+<h2 id="vectors">Vectors</h2>
+
+<p>Vectors are sequential collections with constant time random access capability.</p>
+
+<p>One can also view vectors as integer to element mappings. Examples:</p>
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="k">def</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="p">[</span><span class="no">:zero</span><span class="w"> </span><span class="no">:one</span><span class="w"> </span><span class="no">:two</span><span class="w"> </span><span class="no">:three</span><span class="p">])</span><span class="w">
+
+</span><span class="p">(</span><span class="nb">get</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">=&gt;</span><span class="w"> </span><span class="no">:one</span><span class="w">
+</span><span class="p">(</span><span class="nb">find</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="no">:one</span><span class="p">]</span></code></pre></figure>
+
+<p>Vectors also act like functions (they implement the <code class="highlighter-rouge">clojure.lang.IFn</code> interface):</p>
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">v1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">=&gt;</span><span class="w"> </span><span class="no">:one</span></code></pre></figure>
+
+<p>But be aware not to index out of bounds.</p>
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">v1</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="n">=&gt;</span><span class="w"> </span><span class="n">IndexOutOfBoundsException!!!</span></code></pre></figure>
+
+<p>To avoid IOBE you should use the <code class="highlighter-rouge">(get)</code> function. You can also add a default value that is returned when the given index is not in the vector.</p>
+
+<p>We can also modify an item on an index of a vector:</p>
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nb">assoc</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="no">:One</span><span class="p">)</span><span class="w"> </span><span class="n">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="no">:zero</span><span class="w"> </span><span class="no">:One</span><span class="w"> </span><span class="no">:two</span><span class="w"> </span><span class="no">:three</span><span class="p">]</span></code></pre></figure>
+
+<p>That’s right, one can change an item on an index of a vector just like with a map.</p>
+
+<p>How is about removing an item from a vector?</p>
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nb">dissoc</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">=&gt;</span><span class="w"> </span><span class="n">ClassCastException!!</span></code></pre></figure>
+
+<p>You can not call <code class="highlighter-rouge">dissoc</code> on a vector because that could not remove an item without affecting the indices of all other items after the given index. To remove an item, first you need to split the vector into two parts (calling <code class="highlighter-rouge">subvec</code>) and then create a vector from the concatenation of the result.</p>
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">without</span><span class="w"> </span><span class="p">[</span><span class="n">v</span><span class="w"> </span><span class="nb">index</span><span class="p">]</span><span class="w">
+  </span><span class="p">(</span><span class="nf">vec</span><span class="w"> </span><span class="p">(</span><span class="nb">concat</span><span class="w"> 
+    </span><span class="p">(</span><span class="nb">subvec</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="nb">index</span><span class="p">)</span><span class="w"> 
+    </span><span class="p">(</span><span class="nb">subvec</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="p">(</span><span class="nb">inc</span><span class="w"> </span><span class="n">idex</span><span class="p">)))))</span></code></pre></figure>
+
+
+  </div>
+</article>
+
+      </div>
+    </div>
+    <footer>
+  <nav>
+    <a href="#">Top of page</a>
+  </nav>
+</footer>
+
+  </body>
+
+</html>

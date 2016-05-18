@@ -1,12 +1,17 @@
 <li class="blogpost-thumbnail">
-  <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
   <h2>
-    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
   </h2>
-  <b>Tags:</b>
+
+  <span class="timestamp">{{ post.date | date: "%b %-d, %Y" }}</span>
+  {% if post.tags.first %}
+  &nbsp;<b>Tags:</b>
   <ul class="tags">
-  {% for tag in post.tags %}
-    <li class="inline archive_list"><a class="tag_list_link" href="{{tag |prepend: "/tag/"| prepend: site.baseurl}}">{{ tag }}</a></li>
+    {% for tag in post.tags %}
+    <li>
+      <a href="{{tag |prepend: "/tag/"| prepend: site.baseurl}}">{{ tag }}</a>
+    </li>
     {% endfor %}
-    </ul>
+  </ul>
+  {% endif %}
 </li>

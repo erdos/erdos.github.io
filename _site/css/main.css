@@ -1,6 +1,7 @@
 /**
  * Reset some basic elements
  */
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700italic,700);
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -11,7 +12,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/1.5 "Palatino Linotype", "Book Antiqua", Palatino, serif;
   color: #111;
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%;
@@ -66,10 +67,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #ef34a3;
   text-decoration: none; }
   a:visited {
-    color: #1756a9; }
+    color: #c7107c; }
   a:hover {
     color: #111;
     text-decoration: underline; }
@@ -86,16 +87,6 @@ blockquote {
   font-style: italic; }
   blockquote > :last-child {
     margin-bottom: 0; }
-
-/**
- * Code formatting
- */
-pre,
-code {
-  font-size: 15px;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
-  background-color: #eef; }
 
 code {
   padding: 1px 5px; }
@@ -288,8 +279,7 @@ pre {
 .blogpost-thumbnail {
   display: block;
   padding: 1em;
-  margin: 1em;
-  border: 1px solid silver; }
+  margin: 1em; }
 
 ul.tags {
   display: inline-block;
@@ -300,3 +290,65 @@ ul.tags > li {
   display: inline-block;
   padding: 0;
   margin: 0; }
+
+a, u {
+  text-decoration: underline; }
+
+.timestamp, .tags > li > a {
+  display: inline-block;
+  background: #ddd;
+  color: white;
+  font-size: 0.7em;
+  border-radius: 2px;
+  padding: 0 3px;
+  text-shadow: none;
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold; }
+
+.tags > li > a {
+  background: #ef34a3; }
+
+h2 > a {
+  color: black; }
+
+pre, code {
+  border: 1px solid silver; }
+
+footer, #A {
+  text-align: center;
+  border-bottom: 3px double #eaeaea;
+  border-top: 3px double #eaeaea; }
+
+div.home > h1 {
+  text-align: center; }
+
+body {
+  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: bold; }
+
+body div#main {
+  display: block;
+  width: auto;
+  max-width: 640px;
+  min-width: 320px;
+  margin: auto;
+  padding: 2em 1em; }
+
+footer > nav > a, #A nav.M > a {
+  display: inline-block;
+  margin: 1em;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold; }
+
+nav.tag-cloud {
+  font-style: italic;
+  text-align: center; }
+
+a {
+  transition: color 0.5s ease-in-out; }

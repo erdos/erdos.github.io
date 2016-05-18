@@ -3,10 +3,11 @@
 ---
 @charset "utf-8";
 
+$sans-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$serif-font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 
+$base-font-family: $serif-font-family;
 
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -16,7 +17,7 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$brand-color:      #ef34a3; //#2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -39,13 +40,56 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-//        "layout",
         "syntax-highlighting"
 ;
 
 .blogpost-thumbnail{
-        display:block; padding:1em; margin:1em; border: 1px solid silver;
+        display:block; padding:1em; margin:1em;
 }
 
 ul.tags{display:inline-block; padding:0; margin: 0;}
 ul.tags > li{display:inline-block; padding:0; margin:0}
+
+
+a, u{text-decoration: underline;
+     //text-shadow: 2px 2px 0px red;
+     }
+
+.timestamp, .tags > li > a{display: inline-block; background:#ddd; color:white; font-size:0.7em; border-radius: 2px; padding: 0 3px; text-shadow:none; text-decoration:none;
+font-family: $sans-font-family; font-weight:bold;}
+.tags > li > a{background: $brand-color;}
+
+h2 > a {color: black; }
+
+pre, code {border: 1px solid silver;}
+
+footer, #A {text-align:center; border-bottom: 3px double #eaeaea; border-top: 3px double #eaeaea}
+
+div.home > h1{text-align:center;}
+
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700italic,700);
+
+body {
+  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight:400;
+          }
+
+h1,h2,h3,h4,h5,h6{
+        font-family: $serif-font-family;
+        font-weight:bold;
+}
+
+body div#main{display:block; width:auto;
+              max-width:640px;
+              min-width: 320px;
+              margin:auto; padding: 2em 1em}
+
+footer>nav >a, #A nav.M > a{
+display:inline-block; margin:1em; text-decoration:none;
+text-align:center; font-weight:bold;
+}
+
+nav.tag-cloud{font-style:italic; text-align:center;}
+
+a{transition: color 0.5s ease-in-out;}

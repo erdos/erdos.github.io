@@ -4,5 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hi. I am a Computer Science masters student in ELTE, Budapest. I am interested in geometry, machine learning and functional programming.
 
+In my free time I am building a Deltabot 3d Printer. I am building and flying giant kites.
+
+Check out my Github activity and contact me on LinkedIn.

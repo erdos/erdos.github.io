@@ -4,14 +4,25 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<nav class="tag-cloud">
+  Tags:
+  {% for tag in site.tags %}
+  &nbsp;
+  <a
+     style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%"
+     class="post-tag"
+     href="/tag/{{ tag | first | slugize }}">
+    {{ tag | first }}</a>
+  {% endfor %}
+</nav>
+<br/>
+  <h1>Posts</h1>
 
-  <ul class="post-list">
+  <ul>
     {% for post in site.posts %}
-    {% include enum_post.html %}
+    <h2><a href="{{post.url}}">{{post.title}}</a></h2>
+    <!--{% include enum_post.html %}-->
     {% endfor %}
   </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

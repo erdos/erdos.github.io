@@ -4,6 +4,10 @@ title: "Indexed data structures in Clojure"
 date: 2016-05-16 01:00:02 +0200
 tags:
  - clojure
+ - java
+ - interop
+ - programming
+ - immutable
 ---
 
 When rumbling in the <a href="https://github.com/clojure/clojure/tree/master/src/jvm/clojure/lang">Java source codes</a> of the Clojure language
@@ -46,6 +50,8 @@ One can easily create a wrapper class that gives an indexed functionality to any
 
 {% highlight clojure %}
 (def a1 (indexed (range 5 105)))
+
+a1 ;=> (5 6 7 8 ... 104)
 
 (.index a1) ;=> 0
 (.index (next a1)) ;=> 1
