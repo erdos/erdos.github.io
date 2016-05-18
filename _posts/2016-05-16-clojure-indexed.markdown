@@ -59,3 +59,4 @@ a1 ;=> (5 6 7 8 ... 104)
 (.index (take-last 2 a1)) ; => 98
 ;; ... etc.
 {% endhighlight %}
+

@@ -22,6 +22,8 @@ One can also view vectors as integer to element mappings. Examples:
 (find v1 1) => [1 :one]
 {% endhighlight %}
 
+### Functions
+
 Vectors also act like functions (they implement the `clojure.lang.IFn` interface):
 
 {% highlight clojure %}
@@ -35,6 +37,8 @@ But be aware not to index out of bounds.
 {% endhighlight %}
 
 To avoid IOBE you should use the `(get)` function. You can also add a default value that is returned when the given index is not in the vector.
+
+### Modify
 
 We can also modify an item on an index of a vector:
 
@@ -56,6 +60,10 @@ You can not call `dissoc` on a vector because that could not remove an item with
 (defn without [v index]
   (vec (concat 
     (subvec v 0 index) 
-    (subvec v (inc idex)))))
+    (subvec v (inc index)))))
 {% endhighlight %}
+
+### As Queues
+
+Vectors are often used as queues. The `conj` function appends a value to the end of the vector. The `peek` function returs the last item of the vector in constant time. (The `last` function is linear time thus much slower usually.) The `pop` function drops the last item from a vector.
 
