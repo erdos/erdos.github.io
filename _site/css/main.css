@@ -67,10 +67,8 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #ef34a3;
+  color: #1463bf;
   text-decoration: none; }
-  a:visited {
-    color: #c7107c; }
   a:hover {
     color: #111;
     text-decoration: underline; }
@@ -296,7 +294,7 @@ a, u {
 
 .timestamp, .tags > li > a {
   display: inline-block;
-  background: #ddd;
+  background: #aaa;
   color: white;
   font-size: 0.7em;
   border-radius: 2px;
@@ -307,18 +305,13 @@ a, u {
   font-weight: bold; }
 
 .tags > li > a {
-  background: #ef34a3; }
-
-h2 > a {
-  color: black; }
+  background: #1463bf; }
 
 pre, code {
   border: 1px solid silver; }
 
 footer, #A {
-  text-align: center;
-  border-bottom: 3px double #eaeaea;
-  border-top: 3px double #eaeaea; }
+  text-align: center; }
 
 div.home > h1 {
   text-align: center; }
@@ -351,4 +344,60 @@ nav.tag-cloud {
   text-align: center; }
 
 a {
-  transition: color 0.5s ease-in-out; }
+  transition: color 0.5s ease-in-out;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+table.features {
+  border-spacing: 0;
+  border-collapse: collapse;
+  white-space: nowrap; }
+
+table.features td, table.features th {
+  border: 1px solid silver; }
+
+table.features td.bool.t {
+  background: #afb; }
+
+table.features td.bool.f {
+  background: #fba; }
+
+table.features *.c {
+  text-align: center; }
+
+table.features *.sm {
+  font-size: 0.8em; }
+
+table.features th.z, table.features td.z {
+  border: 0;
+  background: transparent; }
+
+a.fill {
+  display: inline-block;
+  background: #1463bf;
+  padding: 0.5em 1em;
+  text-align: center;
+  color: white;
+  font-weight: bold; }
+
+a.outline {
+  display: inline-block;
+  border: 6px double #1463bf;
+  padding: 0.5em 1em;
+  text-align: center;
+  color: #1463bf;
+  text-decoration: none;
+  font-weight: bold; }
+
+span.timestamp.to-left {
+  position: absolute;
+  margin: 0;
+  margin-left: -114px;
+  margin-top: 0.7em;
+  background: transparent;
+  color: #999;
+  width: 100px;
+  text-align: right;
+  padding: 0; }

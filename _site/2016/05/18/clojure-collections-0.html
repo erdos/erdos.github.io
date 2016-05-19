@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Clojure collection quirks - A REFERENCE</title>
+  <meta name="description" content="I’ve always wanted to create a reference on clojure collections for a long time now.">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://erdos.github.io/2016/05/18/clojure-collections-0.html">
+  <link rel="alternate" type="application/rss+xml" title="personal web site of janos erdos" href="http://erdos.github.io/feed.xml">
+</head>
+
+
+  <body>
+    <section id="A">
+  <div>
+    <!--<a id="Logo" href="/">personal web site of janos erdos</a>-->
+    <nav class="M">
+      <a href="/">Blog</a>
+      
+      
+      <a href="/about/">About</a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </nav>
+
+
+  </div>
+</section>
+
+    <div id="main">
+      <div>
+        <article class="post" itemscope>
+  <header>
+    <h1><a href="/2016/05/18/clojure-collections-0.html">Clojure collection quirks - A REFERENCE</a></h1>
+  </header>
+  <br/>
+  <div>
+    <p>I’ve always wanted to create a reference on clojure collections for a long time now.</p>
+
+<h3 id="functions">Functions</h3>
+
+<p>This table contains the most common functions and collections.</p>
+
+<table class="features">
+<thead>
+<tr class="c"><td colspan="2" class="z"></td><td colspan="3">Seq</td><td colspan="2">Vector</td><td colspan="2">Map</td><td colspan="2">Set</td></tr>
+<tr class="sm"><th class="z"></th><th>nil</th><th>'(1 2 3)</th><th>(range 5)</th><th>(range)<br />(lazy-seq)<br />(cons 1 (lazy-seq))</th><th>[1 2 3]</th><th>Persistent<br />Queue/EMPTY</th><th>(hash-map)<br />(array-map)</th><th>(sorted-map)</th><th>#{}</th><th>(sorted-set)</th></tr></thead>
+<tbody>
+  <tr class="sm"><td>type</td><td class="nil">nil</td><td>Persistent<br />List</td><td>LongRange</td><td>Iterate<br />or LazySeq<br />or Cons</td><td>Persistent<br />Vector</td><td>Persistent<br />Queue</td><td>Persistent<br />ArrayMap<br />or&nbsp;HashMap</td><td>Persistent<br />TreeMap</td><td>Persistent<br />HashSet</td><td>Persistent<br />TreeSet</td></tr>
+  <tr><td>ifn?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td></tr>
+  <tr><td>associative?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>map?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>sequential?</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>coll?</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td></tr>
+  <tr><td>counted?</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td></tr>
+  <tr><td>list?</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>seq?</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>vector?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>map?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool f">false</td></tr>
+  <tr><td>set?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td></tr>
+  <tr><td>sorted?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool t">true</td></tr>
+</tbody></table>
+
+<p><br /></p>
+
+<h3 id="interfaces">Interfaces</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>interface</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">IMeta</code></td>
+      <td>The object has meta information accessible via the <code class="highlighter-rouge">(meta x)</code> function.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IObj</code></td>
+      <td>Indicates that meta information can be added to object (<code class="highlighter-rouge">with-meta</code> function)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Counted</code></td>
+      <td>This collection supports fast counting (<code class="highlighter-rouge">(count x)</code> function call).</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IEditableCollection</code></td>
+      <td>A transient version of the collection can be created with the <code class="highlighter-rouge">(transient x)</code> call.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IFn</code></td>
+      <td>Collection can be called just like a function.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IKeywordLookup</code></td>
+      <td>Collection supports indexing by keywords.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ILookup</code></td>
+      <td>Collection supports access by index (via <code class="highlighter-rouge">get</code> function with default value.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IPending</code></td>
+      <td>Supports <code class="highlighter-rouge">realized?</code> function.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">IPersistentCollection</code></td>
+      <td>Persistent collections have support for <code class="highlighter-rouge">conj</code>, <code class="highlighter-rouge">empty</code>, <code class="highlighter-rouge">count</code>, <code class="highlighter-rouge">equals</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ISeq</code></td>
+      <td>Sequences have support for <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">next</code>, <code class="highlighter-rouge">rest</code>, <code class="highlighter-rouge">cons</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>etc..</p>
+
+
+  </div>
+</article>
+<footer>
+  <nav>
+    <a href="#" class="outline">Top of page</a>
+    <a href="http://erdos.github.io" class="outline">Home</a>
+  </nav>
+</footer>
+
+      </div>
+    </div>
+    <footer>
+</footer>
+
+  </body>
+
+</html>
