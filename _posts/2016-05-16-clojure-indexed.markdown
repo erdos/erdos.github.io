@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Indexed data structures in Clojure"
-date: 2016-05-16 01:00:02 +0200
+date: 2016-05-16 12:00:02 +0200
 tags:
  - clojure
  - java
