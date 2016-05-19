@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clojure collection quirks - Vectors"
-date: 2016-05-17 01:00:02 +0200
+date: 2016-05-17 08:00:02 +0200
 tags:
  - clojure
  - programming

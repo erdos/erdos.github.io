@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clojure collection quirks - Maps"
-date: 2016-05-18 01:00:02 +0200
+date: 2016-05-18 13:00:02 +0200
 tags:
  - clojure
  - programming
