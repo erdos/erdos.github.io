@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clojure collection quirks - A REFERENCE"
-date: 2016-05-18 12:00:02 +0200
+date: 2016-05-19 12:00:02 +0200
 tags:
  - clojure
  - java
