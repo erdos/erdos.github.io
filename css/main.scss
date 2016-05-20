@@ -3,10 +3,14 @@
 ---
 @charset "utf-8";
 
-$sans-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-$serif-font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+@import url(https://fonts.googleapis.com/css?family=Raleway:800italic);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
-$base-font-family: $serif-font-family;
+$serif-font-family: 'Raleway', sans-serif;
+$sans-font-family :'Lato', sans-serif;
+
+$base-font-family: $sans-font-family;
+$title-font-family: $serif-font-family;
 
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -19,11 +23,13 @@ $text-color:       #111;
 $background-color: #fdfdfd;
 //$brand-color:      #ef34a3; //#2a7ae2;
 //$brand-color:      #1463bf;
-$brand-color: #218B0C;
+$brand-color: #555555;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+
+$title-link-color: #23be92; //#23deb2;
 
 // Width of the content area
 $content-width:    800px;
@@ -71,28 +77,21 @@ pre, code {border: 1px solid silver;}
 
 div.home > h1{text-align:center;}
 
-
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700italic,700);
-
-body {
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-weight:400;
-          }
-
 h1,h2,h3,h4,h5,h6{
-        font-family: $serif-font-family;
+        font-family: $title-font-family;
         font-weight:bold;
 }
 
 body div#main{display:block; width:auto;
               max-width:640px;
-              min-width: 320px;
+              min-width: 360px;
               margin:auto; padding: 2em 1em}
 
 footer>nav >a, #A nav.M > a{
-display:inline-block; margin:1em; text-decoration:none;
-text-align:center; font-weight:bold;
+  display:inline-block; margin:1em; text-decoration:none;
+  text-align:center; font-weight:bold;
 }
+
 
 nav.tag-cloud{font-style:italic; text-align:center;}
 
@@ -107,15 +106,13 @@ table.features *.c{text-align:center}
 table.features *.sm{font-size: 0.8em}
 table.features th.z, table.features td.z{border: 0; background: transparent}
 
-a.fill{display: inline-block; background: $brand-color; padding: 0.5em 1em; text-align:center; color: white;
+a.fill {display: inline-block; background: $brand-color; padding: 0.5em 1em; text-align:center; color: white;
 font-weight:bold;}
-a.outline{display: inline-block; border: 6px double $brand-color; padding: 0.5em 1em; text-align:center;
+a.outline {display: inline-block; border: 6px double $brand-color; padding: 0.5em 1em; text-align:center;
 color: $brand-color; text-decoration: none; font-weight:bold}
 
-span.timestamp.to-left{position:absolute; margin:0;margin-left: -114px; margin-top: 0.7em;
-                                          background: transparent; color: #999;
-                                          width:100px; text-align:right; padding:0;
-}
+
+
 
 div.triangle{
 	border-bottom: 100px solid #ddd;
@@ -130,3 +127,31 @@ div.triangle:hover{
 	border-top: 50px solid #ddd;
 	border-radius: 50px;
 }
+
+h1>a, h2>a, h3>a, h4>a, a.b{color: $title-link-color;}
+
+ul.posts > li{display:block; padding:0; margin:0}
+ul.posts{display:block; padding:0; margin:0}
+
+.gr{position:relative; display:flex;flex-direction:row; align-items:stretch; align-content:stretch; flex-wrap:wrap;}
+.gr > *:first-child {flex:3 3 auto; box-sizing: content-box; position:relative; display:inline-block;}
+.gr > *:last-child  {flex: 6 6 auto; box-sizing: content-box; position:relative; display:inline-block;}
+.gr > *{margin: 4px;}
+
+span.timestamp {
+                    text-align:right;
+         background: transparent; color: #999;
+         padding:0; margin: 1em 0.5em;
+          line-height: 4em;
+}
+
+.r{text-align:right;}
+
+ul.posts > li > a {font-size: 1.5em; font-family: $title-font-family; font-weight:bold;}
+
+
+
+*.border{background:transparent; border: 2px solid #ddd; padding: 8px}
+a.border{border-color: $title-link-color; color: $title-link-color; }
+
+.rss{font-weight: bold; line-height: 4em; text-align:center;}

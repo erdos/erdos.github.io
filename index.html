@@ -4,27 +4,25 @@ layout: default
 
 <div class="home">
   <br/>
-  <nav class="tag-cloud">
-    Tags:
-    {% for tag in site.tags %}
-    &nbsp;
-    <a
-       style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%"
-       class="post-tag"
-       href="/tag/{{ tag | first | slugize }}">
-      {{ tag | first }}</a>
-    {% endfor %}
-  </nav>
-  <br/>
-  <nav class="tag-cloud" style="text-align:center;">
-    Feed: &nbsp; <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="fill">RSS</a>
-  </nav>
+  <div class="gr"><a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="rss border">RSS</a><nav class="tag-cloud border">
+      <i>Tags:</i><br/>
+      {% for tag in site.tags %}
+      &nbsp;
+      <a
+         style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%"
+         class="post-tag"
+         href="/tag/{{ tag | first | slugize }}">
+        {{ tag | first }}</a>
+      {% endfor %}
+    </nav></div>
   <br/><br/>
   <h1>Posts</h1>
-  <ul>
+  <ul class="posts">
     {% for post in site.posts %}
-    <span class="timestamp to-left">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <h2><a href="{{post.url}}">{{post.title}}</a></h2>
+    <li class="gr">
+      <div><span class="timestamp r">{{ post.date | date: "%b %-d, %Y" }}</span></div>
+      <a href="{{post.url}}" class="b">{{post.title}}</a>
+    </li>
     <!--{% include enum_post.html %}-->
     {% endfor %}
   </ul>

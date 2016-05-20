@@ -20,7 +20,7 @@ This table contains the most common functions and collections.
 <table class="features">
 <thead>
 <tr class="c"><td colspan="2" class="z"></td><td colspan="3">Seq</td><td colspan="2">Vector</td><td colspan="2">Map</td><td colspan="2">Set</td></tr>
-<tr class="sm"><th class="z"></th><th>nil</th><th>'(1 2 3)</th><th>(range 5)</th><th>(range)<br/>(lazy-seq)<br>(cons 1 (lazy-seq))</th><th>[1 2 3]</th><th>Persistent<br>Queue/EMPTY</th><th>(hash-map)<br/>(array-map)</th><th>(sorted-map)</th><th>#{}</th><th>(sorted-set)</th></tr></thead>
+<tr class="sm"><th class="z"></th><th>nil</th><th>'(1 2 3)</th><th>(range 5)</th><th>(range)<br/>(lazy-seq)<br>(cons 1 ())</th><th>[1 2 3]</th><th>Persistent<br>Queue/EMPTY</th><th>(hash-map)<br/>(array-map)</th><th>(sorted-map)</th><th>#{}</th><th>(sorted-set)</th></tr></thead>
 <tbody>
   <tr class="sm"><td>type</td><td class="nil">nil</td><td>Persistent<br>List</td><td>LongRange</td><td>Iterate<br/>or LazySeq<br/>or Cons</td><td>Persistent<br>Vector</td><td>Persistent<br>Queue</td><td>Persistent<br>ArrayMap<br>or&nbsp;HashMap</td><td>Persistent<br>TreeMap</td><td>Persistent<br>HashSet</td><td>Persistent<br>TreeSet</td></tr>
   <tr><td>ifn?</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool f">false</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td><td class="bool t">true</td></tr>
