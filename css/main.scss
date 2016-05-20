@@ -18,7 +18,8 @@ $spacing-unit:     30px;
 $text-color:       #111;
 $background-color: #fdfdfd;
 //$brand-color:      #ef34a3; //#2a7ae2;
-$brand-color:      #1463bf;
+//$brand-color:      #1463bf;
+$brand-color: #218B0C;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -114,4 +115,18 @@ color: $brand-color; text-decoration: none; font-weight:bold}
 span.timestamp.to-left{position:absolute; margin:0;margin-left: -114px; margin-top: 0.7em;
                                           background: transparent; color: #999;
                                           width:100px; text-align:right; padding:0;
+}
+
+div.triangle{
+	border-bottom: 100px solid #ddd;
+	border-left: 68px solid transparent; border-right: 68px solid transparent;
+	border-top:0 solid transparent;
+	margin:150px auto; width:0; height:0;
+	transition: all 1s ease-in-out;
+}
+div.triangle:hover{
+	width: 100px; border: 0px solid transparent;
+	border-bottom: 50px solid #ddd;
+	border-top: 50px solid #ddd;
+	border-radius: 50px;
 }

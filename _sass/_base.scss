@@ -189,17 +189,3 @@ pre {
         }
     }
 }
-
-div.triangle{
-	border-bottom: 100px solid #ddd;
-	border-left: 68px solid transparent; border-right: 68px solid transparent;
-	border-top:0 solid transparent;
-	margin:200px auto; width:0; height:0;
-	transition: all 1s ease-in-out;
-}
-div.triangle:hover{
-	width: 100px; border: 0px solid transparent;
-	border-bottom: 50px solid #ddd;
-	border-top: 50px solid #ddd;
-	border-radius: 50px;
-}

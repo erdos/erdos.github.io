@@ -10,8 +10,8 @@ In my free time I am building a Deltabot 3d Printer. I am also building and flyi
 
 Check out my Github activity and contact me on LinkedIn.
 
-<a class="outline" href="https://www.github.com/erdos">Github</a>
-<a class="outline" href="https://www.linkedin.com/in/erdosjr">LinkedIn</a>
-<a class="outline" href="https://www.facebook.com/janos.erdos">Facebook</a>
+<a class="fill" href="https://www.github.com/erdos">Github</a>
+<a class="fill" href="https://www.linkedin.com/in/erdosjr">LinkedIn</a>
+<a class="fill" href="https://www.facebook.com/janos.erdos">Facebook</a>
 
 <div class="triangle"></div>
