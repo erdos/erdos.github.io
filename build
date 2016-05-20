@@ -7,7 +7,7 @@ git add .
 git commit -m "auto commit"
 #git remote add origin https://github.com/erdos/erdos.github.io.git
 
-git push -f --set-upstream origin master
+git push -f #--set-upstream origin master
 
 cd ..
 jekyll clean
