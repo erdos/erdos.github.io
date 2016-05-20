@@ -56,5 +56,5 @@ This table contains the most common functions and collections.
 |`ISeq`     | Sequences have support for `first`, `next`, `rest`, `cons`|
 |-----------|------------------------------------------|
 
-etc..
+etc...
 
