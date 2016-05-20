@@ -3,6 +3,7 @@
 jekyll clean
 git clone https://github.com/erdos/erdos.github.io.git -b master _site
 jekyll build
+cd _site
 git add .
 git commit -m "auto commit"
 #git remote add origin https://github.com/erdos/erdos.github.io.git
