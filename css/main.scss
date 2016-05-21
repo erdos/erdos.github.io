@@ -82,9 +82,9 @@ h1,h2,h3,h4,h5,h6{
         font-weight:bold;
 }
 
-body div#main{display:block; width:auto;
+body div#main{display:block; width:auto; box-sizing: content-box;
               max-width:640px;
-              min-width: 360px;
+              min-width: 320px;
               margin:auto; padding: 2em 1em}
 
 footer>nav >a, #A nav.M > a{
@@ -105,6 +105,8 @@ table.features td.bool.f{background: #fba;}
 table.features *.c{text-align:center}
 table.features *.sm{font-size: 0.8em}
 table.features th.z, table.features td.z{border: 0; background: transparent}
+
+table.features td:first-child{text-align:right; padding-right: 2px; border-style: dotted}
 
 a.fill {display: inline-block; background: $brand-color; padding: 0.5em 1em; text-align:center; color: white;
 font-weight:bold;}

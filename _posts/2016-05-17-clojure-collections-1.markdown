@@ -12,9 +12,7 @@ Working with Clojure collections is a pleasure. Yet, sometimes one may run into 
 
 ## Vectors
 
-Vectors are sequential collections with constant time random access capability.
-
-One can also view vectors as integer to element mappings. Examples:
+Vectors are sequential collections with constant time random access capability. One can also view vectors as integer to element mappings. Examples:
 
 {% highlight clojure %}
 (def v1 [:zero :one :two :three])
@@ -23,21 +21,22 @@ One can also view vectors as integer to element mappings. Examples:
 (find v1 1) => [1 :one]
 {% endhighlight %}
 
-### Functions
+### Access
 
-Vectors also act like functions (they implement the `clojure.lang.IFn` interface):
+You can acces an element on the nth index with the `get` function or the `nth` function. Be aware that when a given index is not found the `get` function returns `nil` while the `nth` function throws an `IndexOutOfBoundsException`. You can specify a default value as a third argument that is returned when the index is not found.
+
+{% highlight clojure %}
+(nth v1 1) => :one
+(get v1 1) => :one
+(get v1 -3) => nil
+{% endhighlight %}
+
+Vectors also act like functions (they implement the `clojure.lang.IFn` interface). An IOOBE exception is thrown when called on an uknown index.
 
 {% highlight clojure %}
 (v1 1) => :one
+(v1 9) => IndexOutOfBoundsException!!
 {% endhighlight %}
-
-But be aware not to index out of bounds.
-
-{% highlight clojure %}
-(v1 16) => IndexOutOfBoundsException!!!
-{% endhighlight %}
-
-To avoid IOBE you should use the `(get)` function. You can also add a default value that is returned when the given index is not in the vector.
 
 ### Modify
 
@@ -64,7 +63,23 @@ You can not call `dissoc` on a vector because that could not remove an item with
     (subvec v (inc index)))))
 {% endhighlight %}
 
-### As Queues
+You can use the `subvec` function to return part of a vector.
 
-Vectors are often used as queues. The `conj` function appends a value to the end of the vector. The `peek` function returs the last item of the vector in constant time. (The `last` function is linear time thus much slower usually.) The `pop` function drops the last item from a vector.
+{% highlight clojure %}
+(subvec [0 1 2 3 4] 3) => [3 4]
+(subvec [0 1 2 3 4] 1 3) => [1 2]
+{% endhighlight %}
+
+### Usage as queues
+
+Vectors are often used as queues.
+
+- The `conj` function appends a value to the end of the vector. 
+- The `peek` function returs the last item of the vector in constant time. (The `last` function is linear time thus much slower usually.) 
+- The `pop` function drops the last item from a vector.
+
+### Sequences
+
+You can turn a vector to a sequence with the `seq` function (note that `(seq [])` is `nil`). The `rseq` function returns a lazy sequence of items in the vector in reverse order. It is advised to favor `rseq` over `reverse` because of the constant time complexity and lazyness.
+
 

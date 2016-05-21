@@ -60,3 +60,7 @@ a1 ;=> (5 6 7 8 ... 104)
 ;; ... etc.
 {% endhighlight %}
 
+
+## Conclusion
+
+The function shown can be used to wrap sequencial objects in order to keep track of the current index during iteration. This is a simple solution that comes handy when you would need to use `map-indexed` otherwise.
