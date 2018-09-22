@@ -10,12 +10,11 @@ tags:
  - immutable
 ---
 
-
-I've always wanted to create a reference on clojure collections for a long time now.
+This is a reference of Clojure's default data structures and the most common predicates.
 
 ### Functions
 
-This table contains the most common functions and collections.
+This table contains the most common predicates applied to the core collections.
 
 <table class="features">
 <thead>
@@ -44,19 +43,48 @@ This table contains the most common functions and collections.
 
 ### Interfaces
 
-|interface| description|
-|---------|------------|
-|`IMeta`    | The object has meta information accessible via the `(meta x)` function. |
-|`IObj`     | Indicates that meta information can be added to object (`with-meta` function) |
-|`Counted`  | This collection supports fast counting (`(count x)` function call). |
-|`IEditableCollection` | A transient version of the collection can be created with the `(transient x)` call. |
-|`IFn`      | Collection can be called just like a function. |
-|`IKeywordLookup`| Collection supports indexing by keywords.|
-|`ILookup`  | Collection supports access by index (via `get` function with default value.|
-|`IPending` | Supports `realized?` function.|
-|`IPersistentCollection`| Persistent collections have support for `conj`, `empty`, `count`, `equals`.|
-|`ISeq`     | Sequences have support for `first`, `next`, `rest`, `cons`|
-|-----------|------------------------------------------|
+An incomplete list of some of the most commonly used default Clojure interfaces found in the `clojure.lang` package.
 
-etc...
+#### IMeta
 
+The object has meta information accessible via the `(meta x)` function.
+
+#### IObj
+
+Indicates that meta information can be added to object (`with-meta` function).
+
+#### Counted
+
+This collection supports fast counting (`(count x)` function call).
+
+#### IEditableCollection
+
+A transient version of the collection can be created with the `(transient x)` call.
+
+#### IFn
+
+Indicates that he object can be called just like a function.
+
+
+#### IKeywordLookup
+
+A collection supports indexing by keywords.
+
+
+#### ILookup
+
+Collection supports access by index (via `get` function with default value).
+
+
+#### IPending
+
+Supports `realized?` function.
+
+#### IPersistentCollection
+
+Persistent collections have support for `conj`, `empty`, `count`, `equals` functions.
+
+
+#### ISeq
+
+Sequences have support for `first`, `next`, `rest`, `cons` functions.
