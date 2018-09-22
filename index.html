@@ -3,19 +3,6 @@ layout: default
 ---
 
 <div class="home">
-  <br/>
-  <div class="gr"><a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="rss border">RSS</a><nav class="tag-cloud border">
-      <i>Tags:</i><br/>
-      {% for tag in site.tags %}
-      &nbsp;
-      <a
-         style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%"
-         class="post-tag"
-         href="/tag/{{ tag | first | slugize }}">
-        {{ tag | first }}</a>
-      {% endfor %}
-    </nav></div>
-  <br/><br/>
   <h1>Posts</h1>
   <ul class="posts">
     {% for post in site.posts %}

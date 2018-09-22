@@ -113,23 +113,6 @@ font-weight:bold;}
 a.outline {display: inline-block; border: 6px double $brand-color; padding: 0.5em 1em; text-align:center;
 color: $brand-color; text-decoration: none; font-weight:bold}
 
-
-
-
-div.triangle{
-	border-bottom: 100px solid #ddd;
-	border-left: 68px solid transparent; border-right: 68px solid transparent;
-	border-top:0 solid transparent;
-	margin:150px auto; width:0; height:0;
-	transition: all 1s ease-in-out;
-}
-div.triangle:hover{
-	width: 100px; border: 0px solid transparent;
-	border-bottom: 50px solid #ddd;
-	border-top: 50px solid #ddd;
-	border-radius: 50px;
-}
-
 h1>a, h2>a, h3>a, h4>a, a.b{color: $title-link-color;}
 
 ul.posts > li{display:block; padding:0; margin:0}
