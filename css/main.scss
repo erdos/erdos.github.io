@@ -71,7 +71,7 @@ font-family: $sans-font-family; font-weight:bold;}
 
 pre, code {border: 1px solid silver;}
 
- footer, #A {text-align:center;
+ #A {text-align:right;
  //border-bottom: 3px double #eaeaea; border-top: 3px double #eaeaea
  }
 
@@ -85,10 +85,10 @@ h1,h2,h3,h4,h5,h6{
 body div#main{display:block; width:auto; box-sizing: content-box;
               max-width:640px;
               min-width: 320px;
-              margin:auto; padding: 2em 1em}
+              margin:auto; padding: 0.5em 1em}
 
 footer>nav >a, #A nav.M > a{
-  display:inline-block; margin:1em; text-decoration:none;
+  display:inline-block; margin:1em; text-decoration:underline;
   text-align:center; font-weight:bold;
 }
 

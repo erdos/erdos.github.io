@@ -12,7 +12,7 @@ tags:
 
 Map data structures in Clojure are much like associative arrays in other languages. They, however contain many never seen possibilities.
 
-### Creation 
+### Creation
 
 You can create maps with two syntaxes. Either by calling the `hash-map` function or by writing the `{}` map literal.
 
@@ -20,18 +20,18 @@ You can create maps with two syntaxes. Either by calling the `hash-map` function
 (def m1 {:one :a, :two :b, :three :c, :four :d})
 {% endhighlight %}
 
-One interesting fact when working with maps is that all maps with *8 or less entries* maps will be created as a `PersistentArrayMap` an all larger maps will be a `PersistentHashMap`. The two differ only by inte internal representation: it seems like that small maps are better stored in an array.
+One interesting fact when working with maps is that all maps with *8 or less entries* maps will be created as a `PersistentArrayMap` an all larger maps will be a `PersistentHashMap`. The two differ only by the internal representation: small maps are better stored in an array.
 
 ### Sequences
 
 Calling `seq` on a map returns a sequence of its key-value pairs, called entries. They are instances of `clojure.lang.MapEntry` but they also act like vectors.
 
 {% highlight clojure %}
-(seq m1) 
+(seq m1)
   => ([:one :a] [:two :b] [:three :c] [:four :d])
-(type (first m1)) 
+(type (first m1))
   => clojure.lang.MapEntry
-(vector? (first m1)) 
+(vector? (first m1))
   => true
 {% endhighlight %}
 
@@ -49,11 +49,11 @@ You can acces a value for a given key in a map with the `get` function.
 {% endhighlight %}
 
 
-Maps also act like functions (they implement the `IFn` interface). For example:
+Maps also act like functions (they implement the `clojure.lang.IFn` interface). For example:
 
 {% highlight clojure %}
-(map {true :even false :odd} 
-     (map even? 
+(map {true :even false :odd}
+     (map even?
           (range 100)))
  => (:even :odd :even :odd ...)
 {% endhighlight %}
@@ -63,4 +63,3 @@ Please note that calling a map on a missing key returns `nil` or the default val
 ### Modify
 
 Use the `assoc` function to associate a new value with a given key.
-
