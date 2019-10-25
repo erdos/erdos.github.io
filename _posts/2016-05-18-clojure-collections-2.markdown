@@ -48,7 +48,6 @@ You can acces a value for a given key in a map with the `get` function.
   => :default-value
 {% endhighlight %}
 
-
 Maps also act like functions (they implement the `clojure.lang.IFn` interface). For example:
 
 {% highlight clojure %}
@@ -62,4 +61,5 @@ Please note that calling a map on a missing key returns `nil` or the default val
 
 ### Modify
 
-Use the `assoc` function to associate a new value with a given key.
+Use the `assoc` function to associate a new value with a given key. The result of the function call
+is a new copy of the parameter with a value replaced. The original map is kept intact.

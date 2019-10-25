@@ -29,7 +29,7 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$title-link-color: #23be92; //#23deb2;
+$title-link-color: blue; //#23deb2;
 
 // Width of the content area
 $content-width:    800px;
@@ -63,6 +63,8 @@ a, u{text-decoration: underline;
      //text-shadow: 2px 2px 0px red;
      }
 
+     a:hover {text-decoration: none;}
+
 .timestamp, .tags > li > a{display: inline-block; background:#aaa; color:white; font-size:0.7em; border-radius: 2px; padding: 0 3px; text-shadow:none; text-decoration:none;
 font-family: $sans-font-family; font-weight:bold;}
 .tags > li > a{background: $brand-color;}
@@ -70,7 +72,7 @@ font-family: $sans-font-family; font-weight:bold;}
 //h2 > a {color: black; }
 
 pre, code {border: 1px solid silver;}
-
+p > code {padding-left: 0; padding-right: 0; border-style: dotted;}
  #A {text-align:right;
  //border-bottom: 3px double #eaeaea; border-top: 3px double #eaeaea
  }
@@ -94,9 +96,6 @@ footer>nav >a, #A nav.M > a{
 
 
 nav.tag-cloud{font-style:italic; text-align:center;}
-
-a{transition: color 0.5s ease-in-out; text-decoration: none}
-a:hover{text-decoration:underline}
 
 table.features{border-spacing:0; border-collapse:collapse; white-space:nowrap}
 table.features td, table.features th{border:1px solid silver;}
@@ -127,12 +126,11 @@ span.timestamp {
                     text-align:right;
          background: transparent; color: #999;
          padding:0; margin: 1em 0.5em;
-          line-height: 4em;
 }
 
 .r{text-align:right;}
 
-ul.posts > li > a {font-size: 1.5em; font-family: $title-font-family; font-weight:bold;}
+ul.posts > li > a {font-family: $title-font-family;}
 
 
 
