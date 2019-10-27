@@ -7,9 +7,9 @@ tags:
  - programming
 ---
 
-# How do we test private vars in Clojre?
+# How do we test private vars in Clojure?
 
-How do we write unit tests for vars that are defined private?
+How do we write unit tests for private vars?
 
 ## 1. Namespace for implementation
 
@@ -20,7 +20,7 @@ outside world.
 
 You could introduce a new namespace containing the implementation details. Lets
 call it `yournamespace.impl`. The name indicates that this namespace contains
-implementation details and should not be relied on directly. You can unit test
+implementation only and it should not be relied on directly. You can unit test
 the vars if you define all vars publicly in this namespace.
 
 
