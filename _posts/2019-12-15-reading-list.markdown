@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reading List for 2019 December"
-date: 2019-10-25 23:00:00 +0200
+date: 2019-12-15 23:00:00 +0200
 tags:
  - jvm
  - gc
