@@ -73,11 +73,11 @@ font-family: $sans-font-family; font-weight:bold;}
 
 pre, code {border: 1px solid silver;}
 p > code {padding-left: 0; padding-right: 0; border-style: dotted;}
- #A {text-align:right;
+ #A {text-align:center;
  //border-bottom: 3px double #eaeaea; border-top: 3px double #eaeaea
  }
 
-div.home > h1{text-align:center;}
+div.home > h1{text-align:left; font-size: 1.1em}
 
 h1,h2,h3,h4,h5,h6{
         font-family: $title-font-family;
@@ -131,8 +131,6 @@ span.timestamp {
 .r{text-align:right;}
 
 ul.posts > li > a {font-family: $title-font-family;}
-
-
 
 *.border{background:transparent; border: 2px solid #ddd; padding: 8px}
 a.border{border-color: $title-link-color; color: $title-link-color; }

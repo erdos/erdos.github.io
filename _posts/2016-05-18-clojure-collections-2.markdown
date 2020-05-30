@@ -10,7 +10,7 @@ tags:
 
 ## Maps
 
-Map data structures in Clojure are much like associative arrays in other languages. They, however contain many never seen possibilities.
+Map data structures in Clojure are much like associative arrays in other languages. The abstraction is very handy and easy to use.
 
 ### Creation
 

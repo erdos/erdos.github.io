@@ -2,15 +2,16 @@
   <div>
     <!--<a id="Logo" href="{{ site.baseurl }}/">{{ site.title }}</a>-->
     <nav class="M">
-      <a href="{{site.baseurl}}/">Blog</a>
+      <a href="{{site.baseurl}}/">Home</a>
       <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a>
+      <a href="https://github.com/erdos">GitHub</a>
+      <a href="https://linkedin.com/in/erdosjr/">LinkedIn</a>
+
       {% for my_page in site.pages %}
       {% if my_page.title %}
       <a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
       {% endif %}
       {% endfor %}
     </nav>
-
-
   </div>
 </section>

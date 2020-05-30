@@ -10,7 +10,7 @@ tags:
  - immutable
 ---
 
-When rumbling in the <a href="https://github.com/clojure/clojure/tree/master/src/jvm/clojure/lang">Java source codes</a> of the Clojure language
+When rumbling in the <a href="https://github.com/clojure/clojure/tree/master/src/jvm/clojure/lang">Java source codes</a> of the Clojure language,
 I found the mysterious <a href="https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/IndexedSeq.java">IndexedSeq</a> interface. What is it good for?
 
 ## Details

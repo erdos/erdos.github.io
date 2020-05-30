@@ -2,3 +2,5 @@
 .jekyll-metadata
 _site
 _site/*
+.DS_Store
+.jekyll-cache/
