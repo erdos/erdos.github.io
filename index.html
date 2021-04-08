@@ -2,22 +2,30 @@
 layout: default
 ---
 
-<div class="home">
-  <h1>Projects</h1>
-  <div>
-    <a href="https://stencil.erdos.dev/">Stencil</a> | 
-    <a href="https://sphere.erdos.dev/">Spherical Geometry</a>
-  </div>
-  <br/>
+<section>
+  <p>
+    Hi. I am <b>János Erdős</b>, a programmer located in Budapest, Hungary. Check out my  <a href="https://github.com/erdos">GitHub</a> profile 
+    and reach out to me on <a href="https://linkedin.com/in/erdosjr/">LinkedIn</a>.
+    </p>
+</section>
 
-  <h1>Posts</h1>
+<section>
+  <p>
+    My main focus of interests at the moment are related to functional programming and  <a href="https://sphere.erdos.dev/">geometry</a>.
+    I am working on <a href="https://stencil.erdos.dev/">Stencil</a> and <a href="https://github.com/erdos/erdos.assert">Power Asserts for Clojure</a>.
+    Also on smaller tools, like <a href="https://unicode.erdos.dev/">the Unicode debugger</a>, <a href="https://scatterplotmatrix.erdos.dev/">online spm</a>, <a href="https://github.com/erdos/class-analyzer">a Java disassembler</a>, etc.
+  </p>
+</section>
+
+<section>
+  <p>Some relevant blog posts from the past:</p>
   <ul class="posts">
     {% for post in site.posts %}
     <li class="gr">
       <div><span class="timestamp r">{{ post.date | date: "%b %-d, %Y" }}</span></div>
       <a href="{{post.url}}" class="b">{{post.title}}</a>
     </li>
-    <!--{% include enum_post.html %}-->
     {% endfor %}
   </ul>
-</div>
+  <p>See also the <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS feed</a> for all of the above.</p>
+</section>
