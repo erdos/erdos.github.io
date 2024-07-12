@@ -4,3 +4,5 @@ _site
 _site/*
 .DS_Store
 .jekyll-cache/
+.clj-kondo
+.lsp
