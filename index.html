@@ -22,7 +22,7 @@ layout: default
   <ul class="posts">
     {% for post in site.posts %}
     <li class="gr">
-      <div><span class="timestamp r">{{ post.date | date: "%b %-d, %Y" }}</span></div>
+      <div><span class="timestamp r">{{ post.date | date: "%Y-%m-%d" }}</span></div>
       <a href="{{post.url}}" class="b">{{post.title}}</a>
     </li>
     {% endfor %}

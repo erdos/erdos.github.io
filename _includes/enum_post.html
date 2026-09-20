@@ -3,7 +3,7 @@
     <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
   </h2>
 
-  <span class="timestamp">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <span class="timestamp">{{ post.date | date: "%Y-%m-%d" }}</span>
   {% if post.tags.first %}
   &nbsp;<b>Tags:</b>
   <ul class="tags">
